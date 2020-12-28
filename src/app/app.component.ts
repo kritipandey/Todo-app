@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +6,20 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent { 
-  @ViewChild('f') todoForm: NgForm ;
   todo = '';
   todoList = [];
 
-  onSubmit(form:NgForm){
+  onAdd(){
     this.todoList.push(this.todo);
-    this.todoForm.reset(form);
+    this.todo = '';
     return this.todoList; 
   }
 
   onDelete(index){
     this.todoList.splice(index, 1);
+  }
+
+  onDeleteAll(){
+    this.todoList = [];
   }
 }
