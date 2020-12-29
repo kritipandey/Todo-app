@@ -6,8 +6,6 @@
       <br>
       <button type="submit" class="btn btn-default form-control" (click)="onAdd()" [disabled]="!todo">Add</button>                
       <br><br>
-      <button type="button" class="btn btn-danger form-control" (click)="onDeleteAll()" *ngIf="todoList[0]">Delete All</button>
-      <br><br>
       <ul class="list-group" *ngFor="let todos of todoList; let i = index">
         <li class="list-group-item">
           <div class="row">
@@ -20,6 +18,8 @@
           </div> 
         </li>
       </ul>
+      <br><br>
+      <button type="button" class="btn btn-danger form-control" (click)="onDeleteAll()" *ngIf="todoList[1]">Delete All</button>
     </div>
   </div>
 </div>
